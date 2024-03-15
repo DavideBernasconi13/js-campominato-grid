@@ -46,15 +46,24 @@ main {
 .grid {
     width: 650px;
     height: 650px;
-    border: 1px solid red;
     margin: 0 auto;
+    border: 2px solid #fff;
 }
 
 .cell {
     height: calc(100% / 10);
     width: calc(100% / 10);
     float: left;
-    border: 3px solid #fff;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.clicked {
+    background-color: red;
 }
 
 .clearfix::after {
