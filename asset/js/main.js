@@ -11,7 +11,7 @@ function generateCell(contatore) {
     cell.innerHTML = contatore + 1;
     return cell
 }
-console.log(generateCell());
+//console.log(generateCell());
 
 btnActived.addEventListener('click', function () {
     // rimuovo eventuali griglie generate
@@ -20,13 +20,15 @@ btnActived.addEventListener('click', function () {
 
     //cliclo i numeri da 1 a 100 e li metto dentro le celle
     for (let i = 0; i < 100; i++) {
-        grid.appendChild(generateCell(i));
+        const cellClicked = grid.appendChild(generateCell(i));
+        cellClicked.addEventListener('click', function () {
+            cellClicked.classList.add('clicked');
+            console.log('Hai cliccato la cella:', i);
+        })
     }
 
 })
 
-let cellClicked = document.querySelector('.cell');
-cellClicked.addEventListener('click', function () {
-    classList.add('clicked');
-})
+
+
 
